@@ -8,13 +8,15 @@
 	}
 	else{
 		include '../database.php';
-		
-		$sql="SELECT id, username, password FROM USERS WHERE username='$username' AND password='$password';";
+		// $_username = $mysqli->real_escape_string($username);
+		// $_password = $mysqli->real_escape_string($password);
+		$sql="SELECT cust_ID, cust_email, cust_pass FROM CUSTOMERS WHERE cust_email='$username' AND cust_pass='$password';";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		if(is_array($row)){
 			$_SESSION["loginError"] = "";
 			$_SESSION["loggedIn"] = true;
+			$_SESSION["USER_ID"] = $row['cust_ID'];
 			header("location: ../../index.php");	
 			exit();
 		}
