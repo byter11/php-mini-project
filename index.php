@@ -53,28 +53,27 @@ function getTickets() {
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Tickets</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-				<button onclick="initCreateModal()" type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addTicketModal">
-    Add ticket
-</button>	
+  		<div class="container-fluid">
+    		<a class="navbar-brand" href="#">Tickets</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
+    	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+      		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        		<li class="nav-item">
+					<button onclick="initCreateModal()" type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addTicketModal">
+    					Add ticket
+					</button>	
 				</li>
 			</ul>
-		<a class="btn btn-light" 
-		href="./modules/auth/logout.php">
-		Logout</a>
+			<a class="btn btn-light" 
+				href="./modules/auth/logout.php">
+				Logout</a>
 		</div>
 	</nav>
 	<div style="overflow-x:auto">
 	<span class="text-danger"><?php echo $_SESSION["CRUD_ERROR"]?></span>
 	<table class="table table-hover">
-		<caption>Tickets</caption>
 		<thead>
 			<tr>
 				<th scope="col">id</th>
