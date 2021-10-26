@@ -1,3 +1,7 @@
+CREATE DATABASE `lab-06`;
+
+USE 'lab-06';
+
 CREATE TABLE CUSTOMERS ( 
 	cust_ID int PRIMARY KEY, 
 	fname varchar(20) NOT NULL, 
@@ -5,15 +9,25 @@ CREATE TABLE CUSTOMERS (
 	gender varchar(5), 
 	age int, 
 	contact_add varchar(20), 
-	cust_email varchar(20), 
+	cust_email varchar(50), 
 	cust_pass varchar(20) 
 );
 
+INSERT INTO CUSTOMERS VALUES (
+	100,
+	'Steven',
+	'King',
+	'Male',
+	'32',
+	'',
+	'steven.king@lab-06.com',
+	'stking'
+);
 
 CREATE TABLE TICKET ( 
 	ticket_ID int PRIMARY KEY, 
 	ticket_number int NOT NULL, 
-	accom_time datetime NOT NULL, 
+	accom_time time NOT NULL, 
 	ticket_type varchar(10), 
 	prize int, 
 	seat_number int 

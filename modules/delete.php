@@ -5,9 +5,8 @@
 	include './database.php';
 	$sql = "DELETE FROM TICKET WHERE ticket_ID='$ticket_ID' AND cust_ID='$cust_ID'";
 	$result = $conn->query($sql);
-	if ( $conn->query($sql) ) {
-		header("location: /miniproj/index.php");
-		exit;
+	if (! $conn->query($sql) ) {
+		$_SESSION["CRUD_ERROR"] = "Failed to delete ticket: " . $conn->error_get_last();
 	}
-	die("Database error");
+	header("location: /mini-project-dblab/index.php");
 ?>

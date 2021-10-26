@@ -1,1 +1,1 @@
-<?php session_start();$_SESSION["loggedIn"]=false;header("location: /miniproj/login.php");exit;?>
+<?php session_start();$_SESSION["loggedIn"]=false;header("location: /mini-project-dblab/login.php");exit;?>
