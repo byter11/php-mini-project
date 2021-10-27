@@ -1,9 +1,9 @@
 <?php
-	$url="localhost";
-	$db_username="root";
-	$db_password="password";
-	$dbname="lab-06";
-	$conn= new mysqli($url, $db_username, $db_password, $dbname);
+	$DB_URL="localhost";
+	$DB_USERNAME="root";
+	$DB_PASSWORD="password";
+	$DB_NAME="lab-06";
+	$conn= new mysqli($DB_URL, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 	if($conn->connect_error){
 		die($conn->connect_error);
 	}

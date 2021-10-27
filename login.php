@@ -1,7 +1,10 @@
 <?php
 	session_start();
-	if($_SESSION["loggedIn"] === true){
-		header("location: index.php");
+	if($_SESSION["loggedIn"]){
+		if(isset($_SESSION["USER_ID"]))
+			header("location: index.php");
+		elseif(isset($_SESSION["ADMIN_ID"]))
+			header("location: admin.php");
 		exit;
 	}
 ?>
@@ -38,15 +41,15 @@
 </br><h1> Login </h1></br>
 <span class="text-danger"><?php echo $_SESSION["loginError"] ?></span>
 	<form action='./modules/auth/login.php' method="post">
-	<div class="form-group">
+	<div class="mb-3">
                 <label>Username</label>
 		<input type="text" name="username" class="form-control"></div>
 
-	<div class="form-group">
+	<div class="mb-3">
                 <label>Password</label>
 		<input type="password" name="password" class="form-control"></div>
 	
-	<div class="form-group">
+	<div class="mb-3">
 		<input type="submit" class="btn btn-primary" value="Login">
 	</div>
 	
