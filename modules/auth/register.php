@@ -12,15 +12,10 @@ $sql = sprintf("INSERT INTO CUSTOMERS (fname,lname,gender,age,contact_add,cust_e
 				$conn->real_escape_string($cust_email),
 				$conn->real_escape_string($cust_pass)
 	);
-// echo $sql;
-// exit;
-if($conn->query($sql)){
-	echo '<script>alert("Registered successfully")</script>';
+
+if(!$conn->query($sql)){
+	$_SESSION["loginError"] = "Registration failed";
 }
-else{
-	echo $conn->error;
-	exit;
-	echo '<script>alert("Registered failed")</script>';
-}
+$conn->close();
 header('location: ../../login.php');
 ?>
